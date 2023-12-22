@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Paper Scissors</title>
+    <style>
+      html {
+        --color: rgba(255, 255, 255, 0.05);
+      }
+
+      body {
+        margin: 0;
+        background-color: #000;
+      }
+
+      .area {
+        border-right: 1px solid var(--color);
+        border-bottom: 1px solid var(--color);
+        width: var(--areaSize);
+        height: var(--areaSize);
+        background-color: var(--color);
+      }
+
+      .box {
+        position: absolute;
+        width: var(--boxSize);
+        height: var(--boxSize);
+        background-size: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="area"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>
