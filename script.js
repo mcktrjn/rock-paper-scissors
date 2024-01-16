@@ -51,6 +51,7 @@ const checkIfBoxesCollided = (boxA, boxB) => ({
 });
 
 const moveBoxes = () => {
+  const delay = 1000 / 60;
   const boxes = [];
   for (let i = 0; i < 24; i++) boxes.push(createBox(i));
 
@@ -89,18 +90,20 @@ const moveBoxes = () => {
             boxAElement.className = `box content-${boxB.content}`;
           }
 
-          boxA.angle = convertRadiansToDegrees(
-            Math.atan2(
-              boxB.position.y - boxA.position.y,
-              boxB.position.x - boxA.position.x
-            )
-          ) + 180;
+          setTimeout(() => {
+            boxA.angle = convertRadiansToDegrees(
+              Math.atan2(
+                boxB.position.y - boxA.position.y,
+                boxB.position.x - boxA.position.x
+              )
+            ) + 180;
+          }, delay);
         }
       }
 
       boxElement.style.transform = `translate(${box.position.x}px, ${box.position.y}px)`;
     }
-  }, 1000 / 60);
+  }, delay);
 };
 
 moveBoxes();
